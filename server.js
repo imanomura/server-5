@@ -6,7 +6,9 @@ app.use('/*', serveStatic({ root: './public' }));
 
 // GETリクエストに対する処理
 app.get('/api', async (c) => {
-  return c.json({ message: 'GET' });
+  const name = c.req.query('name');
+  const rank = c.req.query('rank');
+  return c.json({ message: 'GET', query: { name, rank } });
 });
 
 app.post('/api', async () => {
