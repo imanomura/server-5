@@ -9,4 +9,16 @@ app.get('/api', async (c) => {
   return c.json({ message: 'GET' });
 });
 
+app.post('/api', async () => {
+  return c.json({ message: 'POST' });
+});
+
+app.put('/api', async () => {
+  return c.json({ message: 'PUT' });
+});
+
+app.delete('/api', async () => {
+  return c.json({ message: 'DELETE' });
+});
+
 Deno.serve(app.fetch);
