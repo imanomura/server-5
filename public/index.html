@@ -36,10 +36,9 @@
 
         // GETリクエスト
         async getData() {
-          const query = new URLSearchParams({
-            name: this.name,
-            rank: this.rank
-          });
+          // const name = c.req.name;
+          // const rank = c.req.rank;
+          // const res = await fetch(`/api/${this.name}/${rank}`);
           const res = await fetch(`/api?${query}`);
           const data = await res.json();
           this.data = JSON.stringify(data, null, 2);
